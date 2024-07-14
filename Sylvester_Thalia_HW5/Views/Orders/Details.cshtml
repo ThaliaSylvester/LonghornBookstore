@@ -1,0 +1,85 @@
+@model Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div
+     <hr />
+    <h4>Order</h4>
+    <h2>Order Details</h2>
+
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.User.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OrderNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OrderDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderNotes)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OrderNotes)
+            </dd>
+        </dl>
+    </div>
+    <h5>Products on this Order</h5>
+    <table class="table table-primary">
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Extended Price</th>
+        </tr>
+        @foreach (OrderDetail rd in Model.OrderDetails)
+        {
+            <tr>
+                <td>@Html.DisplayFor(ModelItem => rd.product.Name)</td>
+                <td>@Html.DisplayFor(ModelItem => rd.Price)</td>
+                <td>@Html.DisplayFor(ModelItem => rd.Quantity)</td>
+                <td>@Html.DisplayFor(ModelItem => rd.ExtendedPrice)</td>
+            </tr>
+        }
+    </table>
+
+    <h5>Order Summary</h5>
+    <table class="table table-sm table-bordered" style="width:30%">
+        <tr>
+            <th colspan="2" style="text-align:center">Order Summary</th>
+        </tr>
+        <tr>
+            <td>Order Subtotal:</td>
+            <td>@Html.DisplayFor(model => model.OrderSubtotal)</td>
+        </tr>
+        <tr>
+            <td>Order Tax:</td>
+            <td>@Html.DisplayFor(model => model.OrderTax)</td>
+        </tr>
+        <tr>
+            <td>Order Total:</td>
+            <td>@Html.DisplayFor(model => model.OrderTotal)</td>
+        </tr>
+
+    </table>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.OrderID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>

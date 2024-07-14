@@ -1,0 +1,53 @@
+@model Sylvester_Thalia_HW5.Models.Supplier
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SupplierName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+    </dl>
+</div>
+<table class="table table-sm table-primary">
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <h5>Products of this Supplier</h5>
+        <table class="table table-bordered">
+            <tr>
+                <th>Product Title</th>
+            </tr>
+            @foreach (Product product in Model.Products)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                </tr>
+            }
+        </table>
+    }
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SupplierID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

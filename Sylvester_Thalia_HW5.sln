@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sylvester_Thalia_HW5", "Sylvester_Thalia_HW5\Sylvester_Thalia_HW5.csproj", "{F1C154C4-4D94-4CB1-8E0D-A7321BCC9AB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1C154C4-4D94-4CB1-8E0D-A7321BCC9AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C154C4-4D94-4CB1-8E0D-A7321BCC9AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C154C4-4D94-4CB1-8E0D-A7321BCC9AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C154C4-4D94-4CB1-8E0D-A7321BCC9AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01CCFD1D-F524-43F2-A4D3-FA94BC8D350D}
+	EndGlobalSection
+EndGlobal
